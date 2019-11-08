@@ -9,15 +9,15 @@ const App = () => {
   return (
     <BrowserRouter>
       <div>
-          <Header />
-          <Switch>
-            <Route exact path="/Home" component={Home} />
-            <Route exact path="/">
-              <Redirect to="/Home" />
-            </Route>
-            <Route component={NotFound}/>
-          </Switch>
-        </div>
+        <Header />
+        <Switch>
+          <Route exact path="/Home" component={Home} />
+          <Route exact path="/">
+            <Redirect to="/Home" />
+          </Route>
+          <Route component={NotFound}/>
+        </Switch>
+      </div>
     </BrowserRouter>
   );
 }
