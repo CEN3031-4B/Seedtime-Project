@@ -14,7 +14,8 @@ class App extends React.Component {
     this.state = {
       items : [
         {name: "apple", price: 7},
-        {name: "orange", price: 3}
+        {name: "orange", price: 3},
+        {name: "banana", price: 1}
       ]
     }
   }
