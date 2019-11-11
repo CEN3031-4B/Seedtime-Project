@@ -27,10 +27,10 @@ class App extends React.Component {
         <div>
           <Header />
           <Switch>
-            <Route exact path="/Home" component={Home} />
-            <Route exact path="/Cart" /*component={Cart}*/ render={(routeProps) => ( <Cart {...routeProps} items={this.state.items}/> )} />
+            <Route exact path="/home" component={Home} />
+            <Route exact path="/cart" /*component={Cart}*/ render={(routeProps) => ( <Cart {...routeProps} items={this.state.items}/> )} />
             <Route exact path="/">
-              <Redirect to="/Home" />
+              <Redirect to="/home" />
             </Route>
             <Route component={NotFound}/>
           </Switch>
@@ -40,22 +40,5 @@ class App extends React.Component {
 
   }
 }
-
-// const App = () => {
-//   return (
-//     <BrowserRouter>
-//       <div>
-//         <Header />
-//         <Switch>
-//           <Route exact path="/Home" component={Home} />
-//           <Route exact path="/">
-//             <Redirect to="/Home" />
-//           </Route>
-//           <Route component={NotFound}/>
-//         </Switch>
-//       </div>
-//     </BrowserRouter>
-//   );
-// }
 
 export default App;

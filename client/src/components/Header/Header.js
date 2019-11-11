@@ -36,24 +36,32 @@ const Header = () => {
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Produce<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Farms</a>
-                    </li>
+                    <Link to="/produce">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Produce<span class="sr-only">(current)</span></a>
+                        </li>
+                    </Link>
+                    <Link to="/about">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About Us</a>
+                        </li>
+                    </Link>
+                    <Link to="/farms">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Farms</a>
+                        </li>
+                    </Link>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></input>
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="navSearch">Search</button>
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></input>
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="navSearch">Search</button>
                 </form>
             </div>
-            <a class="navbar-brand" href="#">
-                <img src = "/shopping-cart.svg" id="cartLogo"></img>
-            </a>
+            <Link to="/cart">
+                <a class="navbar-brand" href="#">
+                    <img src = "/shopping-cart.svg" id="cartLogo"></img>
+                </a>
+            </Link>   
         </nav>
     )
 }
