@@ -27,7 +27,7 @@ const Header = () => {
         // </div>
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <Link to="/home">
+            <Link to="/produce">
                 <a class="navbar-brand" href="#">
                     <img src = "/farmLogo.jpg" id="farmLogo"></img>
                 </a>
