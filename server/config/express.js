@@ -3,7 +3,8 @@ const path = require('path'),
     mongoose = require('mongoose'),
     morgan = require('morgan'),
     bodyParser = require('body-parser'),
-    exampleRouter = require('../routes/examples.server.routes');
+    VeggieRouter = require('../routes/veggie-router'),
+    cors = require('cors');
 
 module.exports.init = () => {
     /* 
@@ -23,10 +24,12 @@ module.exports.init = () => {
     app.use(morgan('dev'));
 
     // body parsing middleware
-    app.use(bodyParser.json());
+    app.use(bodyParser.urlencoded({ extended: true }))
+    app.use(cors())
+    app.use(bodyParser.json())
 
-    // add a router
-    app.use('/api/example', exampleRouter);
+    //add a router
+    app.use('/api', VeggieRouter);
 
     if (process.env.NODE_ENV === 'production') {
         // Serve any static files
