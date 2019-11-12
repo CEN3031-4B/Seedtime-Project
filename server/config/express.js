@@ -3,8 +3,8 @@ const path = require('path'),
     mongoose = require('mongoose'),
     morgan = require('morgan'),
     bodyParser = require('body-parser'),
-    exampleRouter = require('../routes/examples.server.routes'),
-	User = require('');
+	passport = require("passport"),
+	usersRoute = require("../routes/userRoute");
 
 module.exports.init = () => {
     /* 
@@ -24,15 +24,14 @@ module.exports.init = () => {
     app.use(morgan('dev'));
 
     // body parsing middleware
+	app.use(bodyParser.urlencoded({ extended: true }))
     app.use(bodyParser.json());
 
     // add a router
-    app.use('/api/example', exampleRouter);
+	app.use(passport.initialize());
+	require("./passport")(passport);
 
-	app.use('/api/register', registerRouter);
-
-	app.post('/login', 
-			passport.authenticate('local', { successRedirect: '/', failureRedirect: '/login' , failureFlase: true }));
+	app.use("/api/auth", usersRoute);
 
     if (process.env.NODE_ENV === 'production') {
         // Serve any static files
