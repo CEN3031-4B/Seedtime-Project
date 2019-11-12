@@ -5,6 +5,7 @@ import Header from "./components/Header/Header"
 import Cart from './views/Cart/Cart'
 import Produce from './views/Produce/Produce'
 import Register from './views/Register/Register'
+import About from './views/About/About'
 
 
 
@@ -36,6 +37,7 @@ class App extends React.Component {
             <Route exact path="/produce" component={Produce} />
             <Route exact path="/cart" /*component={Cart}*/ render={(routeProps) => ( <Cart {...routeProps} items={this.state.items}/> )} />
             <Route exact path="/register" render={(routeProps) => ( <Register {...routeProps} handleRegister={this.handleRegister} />)} />
+            <Route exact path="/about" component={About} />
             <Route exact path="/">
               <Redirect to="/produce" />
             </Route>
