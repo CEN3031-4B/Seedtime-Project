@@ -9,7 +9,7 @@ var userSchema = new Schema({
 });
 
 //Check out - https://mongoosejs.com/docs/guide.html#models
-var User = mongoose.model('User', userSchema);
+var User = mongoose.model('user', userSchema);
 
 /* Export the model to make it avaiable to other parts of your Node application */
 module.exports = User;
