@@ -42,7 +42,7 @@ class App extends React.Component {
           <Header />
           <Switch>
             <Route exact path="/produce" component={Produce} />
-            <Route exact path="/cart" /*component={Cart}*/ render={(routeProps) => ( <Cart {...routeProps} items={this.state.items}/> )} />
+            <Route exact path="/cart" render={(routeProps) => ( <Cart {...routeProps} items={this.state.items}/> )} />
             <Route exact path="/register" render={(routeProps) => ( <Register {...routeProps} handleRegister={this.handleRegister} />)} />
             <Route exact path="/">
               <Redirect to="/produce" />
