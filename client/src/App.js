@@ -5,6 +5,7 @@ import Header from "./components/Header/Header"
 import Cart from './views/Cart/Cart'
 import Produce from './views/Produce/Produce'
 import Register from './views/Register/Register'
+import axios from 'axios';
 
 
 
@@ -22,8 +23,15 @@ class App extends React.Component {
   }
 
   handleRegister = (username, password) => {
-    console.log(username);
-    console.log(password);
+    // console.log(username);
+    // console.log(password);
+    console.log('Username and Password submitted.');
+    const userData = {
+      username: username,
+      password: password
+    };
+    axios.post('http://localhost:5000/api/auth/register', userData)
+      .then(res => console.log(res.data));
   }
 
   render(){
