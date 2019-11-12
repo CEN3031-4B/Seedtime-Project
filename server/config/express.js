@@ -4,6 +4,7 @@ const path = require('path'),
     morgan = require('morgan'),
     bodyParser = require('body-parser'),
 	passport = require("passport"),
+	cors = require("cors"),
 	usersRoute = require("../routes/userRoute");
 
 module.exports.init = () => {
@@ -25,6 +26,7 @@ module.exports.init = () => {
 
     // body parsing middleware
 	app.use(bodyParser.urlencoded({ extended: true }))
+	app.use(cors());
     app.use(bodyParser.json());
 
     // add a router
