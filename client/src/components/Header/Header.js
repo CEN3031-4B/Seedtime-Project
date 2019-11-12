@@ -27,9 +27,12 @@ const Header = () => {
         // </div>
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">
-                <img src = "/farmLogo.jpg" id="farmLogo"></img>
-            </a>
+            <Link to="/produce">
+                <a class="navbar-brand" href="#">
+                    <img src = "/farmLogo.jpg" id="farmLogo"></img>
+                </a>
+            </Link>
+            
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -51,6 +54,18 @@ const Header = () => {
                             <a class="nav-link" href="#">Farms</a>
                         </li>
                     </Link>
+                    <Link to="/signin">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sign In</a>
+                        </li>
+                    </Link>
+                    <Link to="/register">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Register</a>
+                        </li>
+                    </Link>
+
+
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></input>

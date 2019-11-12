@@ -1,0 +1,23 @@
+#produce-header {
+    position: fixed;
+    left: 40%;
+}
+
+
+#bagCard1 {
+    position: fixed;
+    left: 13%;
+    top: 30%;
+}
+
+#bagCard2 {
+    position: fixed;
+    left: 40%;
+    top: 30%;
+}
+
+#bagCard3 {
+    position: fixed;
+    left: 67%;
+    top: 30%;
+}
