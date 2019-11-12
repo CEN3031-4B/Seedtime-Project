@@ -27,7 +27,7 @@ class App extends React.Component {
     // console.log(password);
     console.log('username and password submitted');
     const userData = {
-      name: username,
+      username: username,
       password: password
     };
     axios.post('http://localhost:5000/api/auth/register', userData)
