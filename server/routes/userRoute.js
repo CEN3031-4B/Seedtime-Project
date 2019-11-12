@@ -13,12 +13,12 @@ router.post("/register", (req, res) => {
 				return res.status(400).json(errors);
 		}
 		
-		User.findOne({ name: req.body.name }).then(user => {
+		User.findOne({ username: req.body.username }).then(user => {
 				if (user) {
-						return res.status(400).json({ name: "Name is in use already" });
+						return res.status(400).json({ username: "Name is in use already" });
 				} else {
 						const thisUser = new User({
-								name: req.body.name,
+								username: req.body.username,
 								//email: req.body.email,
 								password: req.body.password
 						});
@@ -44,9 +44,9 @@ router.post("/login", (req, res) => {
 				return res.status(400).json(errors);
 		}
 		
-		const name = req.body.name;
+		const username = req.body.username;
 		const password = req.body.password;// Find user by email
-		User.findOne({ name }).then(user => {
+		User.findOne({ username }).then(user => {
 				if (!user) {
 						return res.status(404).json({ emailnotfound: "Email not found" });
 				}
@@ -55,7 +55,7 @@ router.post("/login", (req, res) => {
 						if (isMatch) {
 								const payload = {
 										id: user.id,
-										name: user.name
+										username: user.username
 								};
 								
 								jwt.sign(
