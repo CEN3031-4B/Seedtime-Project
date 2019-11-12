@@ -8,7 +8,8 @@ const validateLoginInput = require("../controllers/login");
 const User = require("../models/User");
 
 router.post("/register", (req, res) => {
-		console.log("REGISTER");
+		const { errors, isValid } = validateRegisterInput(req.body);
+		console.log(errors);
 		if (!isValid) {
 				return res.status(400).json(errors);
 		}
@@ -38,13 +39,14 @@ router.post("/register", (req, res) => {
 });
 
 router.post("/login", (req, res) => {
+		const { errors, isValid } = validateLoginInput(req.body);
 		if (!isValid) {
 				return res.status(400).json(errors);
 		}
 		
-		const email = req.body.email;
+		const name = req.body.email;
 		const password = req.body.password;// Find user by email
-		User.findOne({ email }).then(user => {
+		User.findOne({ name }).then(user => {
 				if (!user) {
 						return res.status(404).json({ emailnotfound: "Email not found" });
 				}

@@ -5,10 +5,10 @@ module.exports = function validateRegistration(input) {
 		let errors = {};
 
 		// Verify that none of the fields are empty
-		data.name = !isEmpty(data.name) ? input.name : "";
-		data.email = !isEmpty(data.email) ? input.email : "";
-		data.password = !isEmpty(data.password) ? input.password : "";
-		data.password2 = !isEmpty(data.password2) ? input.password2 : "";
+		input.name = !isEmpty(input.name) ? input.name : "";
+		input.email = !isEmpty(input.email) ? input.email : "";
+		input.password = !isEmpty(input.password) ? input.password : "";
+		input.confirm_pass = !isEmpty(input.confirm_pass) ? input.confirm_pass : "";
 
 		if (Validator.isEmpty(input.name)) {
 				errors.name = "Name field is required";
@@ -18,15 +18,17 @@ module.exports = function validateRegistration(input) {
 				errors.password = "Password field is required";
 		} 
 
-		if (Validator.isEmtpy(input.confirm_pass)) {
+		if (Validator.isEmpty(input.confirm_pass)) {
 				errors.confirm_pass = "Password must be confirmed";
 		} else if (!Validator.equals(input.password, input.confirm_pass)) {
 				errors.confirm_pass = "Passwords are not identical";
 		}
 		
-		if (Validator.isEmtpy(input.email)) {
+		if (Validator.isEmpty(input.email)) {
 				errors.email = "Email field is required";
 		} else if (!Validator.isEmail(input.email)) {
 				errors.email = "Not a valid email";
 		}
+
+		return { errors, isValid: isEmpty(errors) };
 }
