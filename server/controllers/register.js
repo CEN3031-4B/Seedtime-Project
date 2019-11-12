@@ -6,7 +6,7 @@ module.exports = function validateRegistration(input) {
 
 		// Verify that none of the fields are empty
 		input.name = !isEmpty(input.name) ? input.name : "";
-		input.email = !isEmpty(input.email) ? input.email : "";
+		//input.email = !isEmpty(input.email) ? input.email : "";
 		input.password = !isEmpty(input.password) ? input.password : "";
 		input.confirm_pass = !isEmpty(input.confirm_pass) ? input.confirm_pass : "";
 
@@ -24,11 +24,11 @@ module.exports = function validateRegistration(input) {
 				errors.confirm_pass = "Passwords are not identical";
 		}
 		
-		if (Validator.isEmpty(input.email)) {
+		/** if (Validator.isEmpty(input.email)) {
 				errors.email = "Email field is required";
 		} else if (!Validator.isEmail(input.email)) {
 				errors.email = "Not a valid email";
-		}
+		} **/
 
 		return { errors, isValid: isEmpty(errors) };
 }

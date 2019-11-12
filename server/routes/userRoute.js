@@ -9,24 +9,24 @@ const User = require("../models/User");
 
 router.post("/register", (req, res) => {
 		const { errors, isValid } = validateRegisterInput(req.body);
-		console.log(errors);
 		if (!isValid) {
 				return res.status(400).json(errors);
 		}
 		
-		User.findOne({ email: req.body.email }).then(user => {
+		User.findOne({ name: req.body.name }).then(user => {
 				if (user) {
-						return res.status(400).json({ email: "Email already exists" });
+						return res.status(400).json({ name: "Name is in use already" });
 				} else {
 						const thisUser = new User({
 								name: req.body.name,
-								email: req.body.email,
+								//email: req.body.email,
 								password: req.body.password
 						});
 						
 						bcrypt.genSalt(10, (err, salt) => {
 								bcrypt.hash(thisUser.password, salt, (err, hash) => {
 										if (err) throw err;
+										console.log(hash);
 										thisUser.password = hash;
 										thisUser
 												.save()
@@ -34,6 +34,7 @@ router.post("/register", (req, res) => {
 												.catch(err => console.log(err));
 								});
 						});
+						return res.status(200);
 				}
 		});
 });
@@ -44,7 +45,7 @@ router.post("/login", (req, res) => {
 				return res.status(400).json(errors);
 		}
 		
-		const name = req.body.email;
+		const name = req.body.name;
 		const password = req.body.password;// Find user by email
 		User.findOne({ name }).then(user => {
 				if (!user) {
@@ -66,10 +67,13 @@ router.post("/login", (req, res) => {
 												expiresIn: 2147483648
 										},
 										(err, token) => {
-												res.json({
+												res
+													.status(200)
+													.json({
 														success: true,
 														token: "Bearer " + token
 												});
+												return res
 										}
 								);
 						} else {
