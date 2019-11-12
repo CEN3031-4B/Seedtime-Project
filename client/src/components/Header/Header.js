@@ -54,6 +54,18 @@ const Header = () => {
                             <a class="nav-link" href="#">Farms</a>
                         </li>
                     </Link>
+                    <Link to="/signin">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sign In</a>
+                        </li>
+                    </Link>
+                    <Link to="/register">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Register</a>
+                        </li>
+                    </Link>
+
+
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></input>

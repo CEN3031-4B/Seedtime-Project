@@ -4,6 +4,7 @@ import NotFound from "./views/NotFound"
 import Header from "./components/Header/Header"
 import Cart from './views/Cart/Cart'
 import Produce from './views/Produce/Produce'
+import Register from './views/Register/Register'
 
 
 
@@ -20,6 +21,11 @@ class App extends React.Component {
     }
   }
 
+  handleRegister = (username, password) => {
+    console.log(username);
+    console.log(password);
+  }
+
   render(){
 
     return (
@@ -29,6 +35,7 @@ class App extends React.Component {
           <Switch>
             <Route exact path="/produce" component={Produce} />
             <Route exact path="/cart" /*component={Cart}*/ render={(routeProps) => ( <Cart {...routeProps} items={this.state.items}/> )} />
+            <Route exact path="/register" render={(routeProps) => ( <Register {...routeProps} handleRegister={this.handleRegister} />)} />
             <Route exact path="/">
               <Redirect to="/produce" />
             </Route>
