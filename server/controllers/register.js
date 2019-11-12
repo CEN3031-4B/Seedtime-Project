@@ -30,5 +30,3 @@ module.exports = function validateRegistration(input) {
 				errors.email = "Not a valid email";
 		}
 }
-
-modules.export 

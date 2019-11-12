@@ -1,14 +1,14 @@
 const express = require('express')
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose")
-const passport = require("./models/passport");
+const passport = require("passport");
 
 const usersRoute = require("./routes/userRoute");
 
 // Use env port or default
 const port = process.env.PORT || 5000;
 
-const app = express.init()
+const app = express()
 
 app.use(
   bodyParser.urlencoded({
