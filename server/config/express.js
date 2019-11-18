@@ -4,7 +4,9 @@ const path = require('path'),
     morgan = require('morgan'),
     bodyParser = require('body-parser'),
     VeggieRouter = require('../routes/veggie-router'),
-    cors = require('cors');
+	passport = require("passport"),
+	cors = require("cors"),
+	usersRoute = require("../routes/userRoute");
 
 module.exports.init = () => {
     /* 
@@ -30,6 +32,11 @@ module.exports.init = () => {
 
     //add a router
     app.use('/api', VeggieRouter);
+    // add a router
+	app.use(passport.initialize());
+	require("./passport")(passport);
+
+	app.use("/api/auth", usersRoute);
 
 	app.use('/api/register', registerRouter);
 
