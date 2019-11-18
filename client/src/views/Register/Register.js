@@ -17,7 +17,7 @@ class Register extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        this.props.handleRegister(this.state.username, this.state.password);
+        this.props.handleRegister(this.state.username, this.state.password, this.state.confirm_pass);
     }
 
     render() {
@@ -33,6 +33,12 @@ class Register extends React.Component {
                     <Form.Label htmlFor="password">Password</Form.Label>
                     <Form.Control id="password" onChange={this.handleChange} type="password" placeholder="Password" />
                 </Form.Group>
+
+                <Form.Group controlId="formBasicPassword">
+                    <Form.Label htmlFor="confirm_pass">Confirm Password</Form.Label>
+                    <Form.Control id="confirm_pass" onChange={this.handleChange} type="password" placeholder="Confirm Password" />
+                </Form.Group>
+
                 <Button variant="primary" type="submit">
                     Submit
                 </Button>
