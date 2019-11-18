@@ -1,7 +1,7 @@
 const Validator = require("validator");
 const isEmpty = require("is-empty");
 
-module.exports = function validateRegistration(input) {
+module.exports = function validate_register(input) {
 		var errors = {};
 
 		// Verify that none of the fields are empty
@@ -30,5 +30,5 @@ module.exports = function validateRegistration(input) {
 				errors.email = "Not a valid email";
 		} **/
 
-		return { errors, isValid: isEmpty(errors) };
+		return { errors, is_valid: isEmpty(errors) };
 }
