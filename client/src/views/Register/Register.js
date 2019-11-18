@@ -6,7 +6,8 @@ class Register extends React.Component {
 
     state ={
         username: null,
-        password: null
+        password: null,
+        confirm_pass: null
     }
 
     handleChange = (e) => {
