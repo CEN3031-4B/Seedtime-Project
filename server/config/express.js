@@ -6,7 +6,7 @@ const path = require('path'),
     VeggieRouter = require('../routes/veggie-router'),
 	passport = require("passport"),
 	cors = require("cors"),
-	usersRoute = require("../routes/userRoute");
+	usersRoute = require("../routes/user_route");
 
 module.exports.init = () => {
     /* 
@@ -31,17 +31,21 @@ module.exports.init = () => {
     app.use(bodyParser.json())
 
     //add a router
-    app.use('/api', VeggieRouter);
-    // add a router
-	app.use(passport.initialize());
-	require("./passport")(passport);
-
 	app.use("/api/auth", usersRoute);
 
+    app.use('/api', VeggieRouter);
+
+	/**
+	app.use(passport.initialize());
+	require("./passport")(passport);
+	**/
+
+	/**
 	app.use('/api/register', registerRouter);
 
 	app.post('/login', 
 			passport.authenticate('local', { successRedirect: '/', failureRedirect: '/login' , failureFlase: true }));
+	**/
 
     if (process.env.NODE_ENV === 'production') {
         // Serve any static files
