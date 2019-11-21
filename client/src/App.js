@@ -5,6 +5,7 @@ import Header from "./components/Header/Header"
 import Cart from './views/Cart/Cart'
 import Produce from './views/Produce/Produce'
 import Register from './views/Register/Register'
+import AddProduce from './views/AddProduce/AddProduce'
 import axios from 'axios';
 
 
@@ -35,6 +36,17 @@ class App extends React.Component {
       .then(res => console.log(res.data));
   }
 
+  handleAddProduce = (name, price, farm) => {
+    console.log('Item name, price, and farm submitted.');
+    const itemData = {
+      name: name,
+      price: price,
+      farm: farm
+    };
+    axios.post('http://localhost:5000/api/veggie', itemData)
+      .then(res => console.log(res.data))
+  }
+
   render(){
 
     return (
@@ -45,6 +57,7 @@ class App extends React.Component {
             <Route exact path="/produce" component={Produce} />
             <Route exact path="/cart" render={(routeProps) => ( <Cart {...routeProps} items={this.state.items}/> )} />
             <Route exact path="/register" render={(routeProps) => ( <Register {...routeProps} handleRegister={this.handleRegister} />)} />
+            <Route exact path="/add_produce" render={(routeProps) => (<AddProduce {...routeProps} handleAddProduce={this.handleAddProduce} />)}/>
             <Route exact path="/">
               <Redirect to="/produce" />
             </Route>

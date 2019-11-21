@@ -35,13 +35,13 @@ class Produce extends React.Component {
         //     alignItems: 'center',
         //     justify-content: 'space-between'
         // };
+        
 
         const { veggies, isLoading } = this.state;
         console.log(veggies);
         const Produce = veggies.map (veggie => {
-        {/* <Alert id="produce-header" variant="success">Welcome to Seedtime Harvest Farms!</Alert> */}
             return (
-                <span className="bags">
+                <div className="bags">
                     <Card id={veggie.id} style={{ width: '18rem' }}>
                         <Card.Body>
                             <Card.Title>{veggie.name}</Card.Title>
@@ -53,15 +53,12 @@ class Produce extends React.Component {
                         <Card.Link href="#">Add to Cart</Card.Link>
                     </Card.Body>
                     </Card>
-                </span>
-                
+                </div>          
             );
-            // return (
-            //     <li>{veggie.name}</li>
-            // )
         });
         return (
             <div> 
+                <Alert id="produce-header" variant="success">Welcome to Seedtime Harvest Farms!</Alert>
                 {Produce}
             </div>
         )
