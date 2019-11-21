@@ -64,6 +64,11 @@ const Header = () => {
                             <a class="nav-link" href="#">Register</a>
                         </li>
                     </Link>
+                    <Link to="/add_produce">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Add Produce</a>
+                        </li>
+                    </Link>
 
 
                 </ul>
