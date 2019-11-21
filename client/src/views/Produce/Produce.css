@@ -3,21 +3,19 @@
     left: 40%;
 }
 
+/* 
+.id {
+    display: flex;
+    justify-content: space-around;
+    align-self: auto; 
+} */
 
-#bagCard1 {
-    position: fixed;
-    left: 13%;
-    top: 30%;
+.bags {
+    flex: auto;
+    justify-content: space-between;
 }
 
-#bagCard2 {
-    position: fixed;
-    left: 40%;
-    top: 30%;
-}
-
-#bagCard3 {
-    position: fixed;
-    left: 67%;
-    top: 30%;
+.id {
+    flex: auto;
+    justify-content: space-between;
 }
