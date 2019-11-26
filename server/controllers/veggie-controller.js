@@ -34,18 +34,12 @@ createVeggie = (req, res) => {
 }
 
 deleteVeggie = async (req, res) => {
-    await Veggie.findOneAndDelete({ _id: req.params.id }, (err, veggie) => {
+    await Veggie.findOneAndDelete({ _id: req.params.id }, (err) => {
         if (err) {
-            return res.status(400).json({ success: false, error: err })
+            return res.status(400).json({ success: false, error: 'Veggie not found'})
         }
 
-        if (!veggie) {
-            return res
-                .status(404)
-                .json({ success: false, error: `Veggie not found` })
-        }
-
-        return res.status(200).json({ success: true, data: veggie })
+        return res.status(200).json({ success: true})
     }).catch(err => console.log(err))
 }
 
@@ -54,7 +48,7 @@ getVeggies = async (req, res) => {
         if (err) {
             return res.status(400).json({ success: false, error: err })
         }
-        if (!veggies.length) {
+        if (!veggies) {
             return res
                 .status(404)
                 .json({ success: false, error: `Veggie not found` })

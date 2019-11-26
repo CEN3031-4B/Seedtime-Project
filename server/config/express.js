@@ -4,6 +4,7 @@ const path = require('path'),
     morgan = require('morgan'),
     bodyParser = require('body-parser'),
     VeggieRouter = require('../routes/veggie-router'),
+    CartRouter = require('../routes/cart-router'),
 	passport = require("passport"),
 	cors = require("cors"),
 	usersRoute = require("../routes/user_route");
@@ -34,6 +35,7 @@ module.exports.init = () => {
 	app.use("/api/auth", usersRoute);
 
     app.use('/api', VeggieRouter);
+    app.use('/api', CartRouter);
 
 	/**
 	app.use(passport.initialize());

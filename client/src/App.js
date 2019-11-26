@@ -15,11 +15,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      items : [
-        {name: "apple", price: 7},
-        {name: "orange", price: 3},
-        {name: "banana", price: 1}
-      ]
+      
     }
   }
 
@@ -55,7 +51,7 @@ class App extends React.Component {
           <Header />
           <Switch>
             <Route exact path="/produce" component={Produce} />
-            <Route exact path="/cart" render={(routeProps) => ( <Cart {...routeProps} items={this.state.items}/> )} />
+            <Route exact path="/cart" render={(routeProps) => ( <Cart {...routeProps}/> )} />
             <Route exact path="/register" render={(routeProps) => ( <Register {...routeProps} handleRegister={this.handleRegister} />)} />
             <Route exact path="/add_produce" render={(routeProps) => (<AddProduce {...routeProps} handleAddProduce={this.handleAddProduce} />)}/>
             <Route exact path="/">
