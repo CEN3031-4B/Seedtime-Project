@@ -1,5 +1,8 @@
 import React from 'react'
 import './Cart.css'
+import api from '../../api'
+import Card from 'react-bootstrap/Card'
+import Axios from 'axios'
 
 /*
 - pass in items that have been "added to the cart"
@@ -8,27 +11,56 @@ import './Cart.css'
 - item properties: name, price, etc
 */
 
-const Cart = ({items}) => {
-    //const {items} = props; // gets the items list
+class Cart extends React.Component {
 
-    const itemList = items.map(item => {
-        return(
-            <div>
-                <ul>
-                    <li>Name: {item.name}</li>
-                    <li>Price: {item.price}</li>
-                </ul>
+    constructor(props) {
+        super(props)
+        this.state = {
+            cartItems: []
+        }
+    }
+
+    getAllCartItems = async() => {
+        await api.getAllCartItems().then(cartItems => {
+            this.setState({
+                cartItems: cartItems.data.data
+            })
+        })
+    }
+
+    componentDidMount = async () => this.getAllCartItems()
+
+    render() {
+        const {cartItems} = this.state;
+        const Cart = cartItems.map (cartItem => {
+            return(
+                <div className="cart">
+                    <Card id={cartItem.id} style={{ width: '18rem' }}>
+                        <Card.Body>
+                            <Card.Title>{cartItem.name}</Card.Title>
+                            <Card.Text>
+                                Price: {cartItem.price}
+                                <br/>
+                                Farm: {cartItem.farm}
+                            </Card.Text>
+                            <Card.Link href="#" onClick = {() => {                                
+                                api.deleteCartItemById(cartItem._id).then(() => {                                    
+                                    this.getAllCartItems()}
+                                    )
+                            }}>Delete Item</Card.Link>
+                        </Card.Body>
+                    </Card>
+                </div>
+            );
+        });
+        return (
+            <div class="container">
+                <h1 class="text-center">This is the cart page!</h1>
+                {Cart}
+                <button class="btn-success">Checkout</button>
             </div>
         )
-    })
-
-    return(
-        <div class="container">
-            <h1 class="text-center">This is the cart page!</h1>
-            {itemList}
-            <button class="btn-success">Checkout</button>
-        </div>
-    )
-}
+    }
+}   
 
 export default Cart;

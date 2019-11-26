@@ -10,20 +10,14 @@ class Produce extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            veggies: [],
-            isLoading: true
+            veggies: []
         }
     }
 
     componentDidMount = async () => {
-        this.setState({ isLoading: true })
-        console.log("yy")
-        
         await api.getAllVeggies().then(veggies => {
-            console.log("xxx")
             this.setState({
-                veggies: veggies.data.data,
-                isLoading: false,
+                veggies: veggies.data.data
             })
         })
     }
@@ -37,7 +31,7 @@ class Produce extends React.Component {
         // };
         
 
-        const { veggies, isLoading } = this.state;
+        const { veggies} = this.state;
         console.log(veggies);
         const Produce = veggies.map (veggie => {
             return (
@@ -50,8 +44,15 @@ class Produce extends React.Component {
                                 <br/>
                                 Farm: {veggie.farm}
                             </Card.Text>
-                        <Card.Link href="#">Add to Cart</Card.Link>
-                    </Card.Body>
+                            <Card.Link href="#" onClick = {() => {
+                                const item = {
+                                    name: veggie.name,
+                                    price: veggie.price,
+                                    farm: veggie.farm
+                                }
+                                api.insertCartItem(item)
+                            }}>Add to Cart</Card.Link>
+                        </Card.Body>
                     </Card>
                 </div>          
             );
