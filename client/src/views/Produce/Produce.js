@@ -35,46 +35,30 @@ class Produce extends React.Component {
         console.log(veggies);
         const Produce = veggies.map (veggie => {
             return (
-                // <div className="bags">
-                //     <Card id={veggie.id} style={{ width: '18rem' }}>
-                //         <Card.Img variant="top" src=""/>
-                //         <Card.Body>
-                //             <Card.Title>{veggie.name}</Card.Title>
-                //             <Card.Text>
-                //                 Price: {veggie.price}
-                //                 <br/>
-                //                 Farm: {veggie.farm}
-                //             </Card.Text>
-                //             <div class="links" >
-                //                 <Card.Link href="#" onClick = {() => {
-                //                     const item = {
-                //                         name: veggie.name,
-                //                         price: veggie.price,
-                //                         farm: veggie.farm
-                //                     }
-                //                     api.insertCartItem(item)
-                //                 }}>Add to Cart
-                //                 </Card.Link>
-                //             </div>
-                //         </Card.Body>
-                //     </Card>
-                // </div>    
-                
                 <div className="bags">
-                    <Card style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src="holder.js/100px180" />
-                    <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
-                        <Card.Text>
-                        Some quick example text to build on the card title and make up the bulk of
-                        the card's content.
-                        </Card.Text>
-                        <div className="links">
-                            <Card.Link href="#">Another Link</Card.Link>
-                        </div>
-                    </Card.Body>
+                    <Card id={veggie.id} style={{ width: '18rem' }}>
+                        <Card.Img variant="top" src=""/>
+                        <Card.Body>
+                            <Card.Title>{veggie.name}</Card.Title>
+                            <Card.Text>
+                                Price: {veggie.price}
+                                <br/>
+                                Farm: {veggie.farm}
+                            </Card.Text>
+                            <div class="links" >
+                                <Card.Link href="#" onClick = {() => {
+                                    const item = {
+                                        name: veggie.name,
+                                        price: veggie.price,
+                                        farm: veggie.farm
+                                    }
+                                    api.insertCartItem(item)
+                                }}>Add to Cart
+                                </Card.Link>
+                            </div>
+                        </Card.Body>
                     </Card>
-                </div>
+                </div>          
             );
         });
         return (
