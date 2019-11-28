@@ -9,7 +9,9 @@ class AddProduce extends React.Component {
     state = {
         name: null,
         price: null,
-        farm: null
+        farm: null,
+        description: null,
+        season: null
     }
 
     handleChange = (e) => {
@@ -20,7 +22,7 @@ class AddProduce extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        this.props.handleAddProduce(this.state.name, this.state.price, this.state.farm);
+        this.props.handleAddProduce(this.state.name, this.state.price, this.state.farm, this.state.description, this.state.season);
     }
 
     render() {
@@ -51,8 +53,8 @@ class AddProduce extends React.Component {
                 </Form.Group>
                 
                 <Form.Group controlId="formBasicDesc">
-                    <Form.Label htmlFor="desc">Description</Form.Label>
-                    <textarea class="form-control" id="desc" onChange={this.handleChange} type="text" rows="4" placeholder="Description" ></textarea>
+                    <Form.Label htmlFor="description">Description</Form.Label>
+                    <textarea class="form-control" id="description" onChange={this.handleChange} type="text" rows="4" placeholder="Description" ></textarea>
                 </Form.Group>
 
                 <Form.Group controlId="formBasicText">
