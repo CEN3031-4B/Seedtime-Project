@@ -40,12 +40,12 @@
     font-size: 22px;
   }
   
-  .bags button {
+  .price_button {
     border: #c3e6cb;
     outline: 0;
     padding: 12px;
-    color: white;
-    background-color: #000;
+    color: black;
+    background-color: #c3e6cb;
     text-align: center;
     cursor: pointer;
     width: 100%;
