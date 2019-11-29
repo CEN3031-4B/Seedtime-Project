@@ -7,18 +7,35 @@ import Produce from './views/Produce/Produce'
 import Register from './views/Register/Register'
 import AddProduce from './views/AddProduce/AddProduce'
 import axios from 'axios';
-
+import api from './api'
 
 
 class App extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      
-    }
+  state = {
+    veggies: []
+  }
+  
+  componentDidMount(){
+    this.getAllVeggies()
   }
 
+  getAllVeggies = () => {
+    api.getAllVeggies().then(veggies => {
+      this.setState({
+          veggies: veggies.data.data
+      })
+    })
+  }
+
+  onSearch = async searchValue => {
+    if (!searchValue){
+      return this.getAllVeggies();      
+    }    
+    const veggies = await api.searchVeggies(searchValue);        
+    this.setState({veggies: veggies.data.data});
+  }
+  
   handleRegister = (username, password, confirm_pass) => {
     // console.log(username);
     // console.log(password);
@@ -40,17 +57,17 @@ class App extends React.Component {
       farm: farm
     };
     axios.post('http://localhost:5000/api/veggie', itemData)
-      .then(res => console.log(res.data))
-  }
+      .then(res => console.log(res.data));
+  };
 
   render(){
 
     return (
       <BrowserRouter>
         <div>
-          <Header />
+          <Header onSearch={this.onSearch}/>
           <Switch>
-            <Route exact path="/produce" component={Produce} />
+            <Route exact path="/produce" render={(routeProps) => <Produce {...routeProps} veggies={this.state.veggies}/>} />
             <Route exact path="/cart" render={(routeProps) => ( <Cart {...routeProps}/> )} />
             <Route exact path="/register" render={(routeProps) => ( <Register {...routeProps} handleRegister={this.handleRegister} />)} />
             <Route exact path="/add_produce" render={(routeProps) => (<AddProduce {...routeProps} handleAddProduce={this.handleAddProduce} />)}/>

@@ -7,32 +7,8 @@ import api from '../../api'
 
 class Produce extends React.Component {
 
-    constructor(props) {
-        super(props)
-        this.state = {
-            veggies: []
-        }
-    }
-
-    componentDidMount = async () => {
-        await api.getAllVeggies().then(veggies => {
-            this.setState({
-                veggies: veggies.data.data
-            })
-        })
-    }
-
     render() {
-
-        // const divStyle = {
-        //     display: 'flex: 1',
-        //     alignItems: 'center',
-        //     justify-content: 'space-between'
-        // };
-        
-
-        const { veggies} = this.state;
-        console.log(veggies);
+        const { veggies} = this.props;        
         const Produce = veggies.map (veggie => {
             return (
                 <div className="bags">
