@@ -8,6 +8,7 @@ import Register from './views/Register/Register'
 import AddProduce from './views/AddProduce/AddProduce'
 import axios from 'axios';
 import api from './api'
+import 'bootstrap/dist/css/bootstrap.css'
 
 
 class App extends React.Component {
