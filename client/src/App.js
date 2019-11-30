@@ -6,6 +6,7 @@ import Cart from './views/Cart/Cart'
 import Produce from './views/Produce/Produce'
 import Register from './views/Register/Register'
 import AddProduce from './views/AddProduce/AddProduce'
+import About from './views/About/About'
 import axios from 'axios';
 import api from './api'
 import 'bootstrap/dist/css/bootstrap.css'
@@ -70,6 +71,7 @@ class App extends React.Component {
         <div>
           <Header onSearch={this.onSearch}/>
           <Switch>
+            <Route exact path="/about" component={About}/>
             <Route exact path="/produce" render={(routeProps) => <Produce {...routeProps} veggies={this.state.veggies}/>} />
             <Route exact path="/cart" render={(routeProps) => ( <Cart {...routeProps}/> )} />
             <Route exact path="/register" render={(routeProps) => ( <Register {...routeProps} handleRegister={this.handleRegister} />)} />

@@ -25,7 +25,7 @@
 .container-fluid {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 262px;
-    margin: auto;
+    margin: 30px;
     text-align: center;
     font-family: arial;
     background-color: #c3e6cb;
@@ -51,6 +51,18 @@
   
   .container-fluid:hover {
     opacity: 0.7;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    /* padding: 5;
+    margin: 5; */
+    align-content: flex-start;
+    justify-content: flex-start;
+    border: #c3e6cb;
+    
+    
   }
 
   #produce-header {

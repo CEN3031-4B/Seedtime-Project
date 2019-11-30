@@ -53,7 +53,9 @@ class Produce extends React.Component {
                     src="https://www.barillacfn.com/m/articles/1600x280/header-big.jpg">
                 </CardImg>
                 <Alert id="produce-header" variant="success">Welcome to Seedtime Harvest Farms!</Alert>
-                {Produce}
+                <div className="container">
+                    {Produce}
+                </div>
             </div>
         )
         
