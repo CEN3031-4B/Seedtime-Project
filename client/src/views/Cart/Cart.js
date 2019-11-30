@@ -42,6 +42,10 @@ class Cart extends React.Component {
                                 Price: {cartItem.price}
                                 <br/>
                                 Farm: {cartItem.farm}
+                                <br/>
+                                Description: {cartItem.description}
+                                <br/>
+                                Season: {cartItem.season}
                             </Card.Text>
                             <Card.Link href="#" onClick = {() => {                                
                                 api.deleteCartItemById(cartItem._id).then(() => {                                    

@@ -49,12 +49,14 @@ class App extends React.Component {
       .then(res => console.log(res.data));
   }
 
-  handleAddProduce = (name, price, farm) => {
+  handleAddProduce = (name, price, farm, description, season) => {
     console.log('Item name, price, and farm submitted.');
     const itemData = {
       name: name,
       price: price,
-      farm: farm
+      farm: farm,
+      description: description,
+      season: season
     };
     axios.post('http://localhost:5000/api/veggie', itemData)
       .then(res => console.log(res.data));

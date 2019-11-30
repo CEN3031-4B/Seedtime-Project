@@ -11,26 +11,37 @@ class Produce extends React.Component {
         const { veggies} = this.props;        
         const Produce = veggies.map (veggie => {
             return (
-                <div className="bags">
-                    <Card id={veggie.id} style={{ width: '18rem' }}>
-                        <Card.Body>
-                            <Card.Title>{veggie.name}</Card.Title>
-                            <Card.Text>
-                                Price: {veggie.price}
-                                <br/>
-                                Farm: {veggie.farm}
-                            </Card.Text>
-                            <Card.Link href="#" onClick = {() => {
-                                const item = {
-                                    name: veggie.name,
-                                    price: veggie.price,
-                                    farm: veggie.farm
-                                }
-                                api.insertCartItem(item)
-                            }}>Add to Cart</Card.Link>
-                        </Card.Body>
-                    </Card>
-                </div>          
+                <div class="row">
+                    <div class="column">
+                        <div className="bags">
+                        <Card id={veggie.id} style={{ width: '18rem' }}>
+                            <Card.Body id="details">
+                                <Card.Title className="title">{veggie.name}</Card.Title>
+                                <Card.Text>
+                                    <div className="price">${veggie.price}</div>
+                                    <br/>
+                                    The Description: {veggie.description}
+                                    <br/>
+                                    Farm: {veggie.farm}
+                                    <br/>
+                                    Season: {veggie.season}
+                                    <br/>                                
+                                </Card.Text>
+                                <Card.Link href="#" onClick = {() => {
+                                    const item = {
+                                        name: veggie.name,
+                                        description: veggie.description,
+                                        season: veggie.season,
+                                        price: veggie.price,
+                                        farm: veggie.farm
+                                    }
+                                    api.insertCartItem(item)
+                                }} className="price_button">Add to Cart</Card.Link>
+                            </Card.Body>
+                        </Card>
+                        </div> 
+                    </div>
+                </div>
             );
         });
         return (

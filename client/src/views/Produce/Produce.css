@@ -1,21 +1,69 @@
-#produce-header {
-    position: fixed;
-    left: 40%;
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+.column {
+    grid-column: 4;
+    margin: 0 -5px;
+    padding: 0 50px;
 }
 
-/* 
-.id {
-    display: flex;
-    justify-content: space-around;
-    align-self: auto; 
-} */
-
+  .row {
+      margin: 0 -5px;
+      padding: 0 50px;
+      grid-row: 4;
+      margin: 50px;
+    }
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
 .bags {
-    flex: auto;
-    justify-content: space-between;
-}
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 262px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+  }
+  
+  .price {
+    color: grey;
+    font-size: 22px;
+  }
+  
+  .price_button {
+    border: #c3e6cb;
+    outline: 0;
+    padding: 12px;
+    color: black;
+    background-color: #c3e6cb;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+  }
+  
+  .bags:hover {
+    opacity: 0.7;
+  }
 
-.id {
-    flex: auto;
-    justify-content: space-between;
-}
+  #produce-header {
+      float: center;
+  }
+
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
