@@ -48,12 +48,7 @@ class AddProduce extends React.Component {
                 
                 <Form.Group controlId="formBasicSelect">
                     <Form.Label htmlFor="season"><TiWeatherSunny/> Avaliable Season</Form.Label>
-                    <select class="form-control"id="seasons">
-                        <option>Spring</option>
-                        <option>Summer</option>
-                        <option>Fall</option>
-                        <option>Winter</option>
-                    </select>
+                    <Form.Control id="season" onChange={this.handleChange} type="text" placeholder="Produce Seasons" />
                 </Form.Group>
                 
                 <Form.Group controlId="formBasicDesc">

@@ -91,15 +91,7 @@ class Register extends React.Component {
 
                 <Form.Group controlId="formBasicDay">
                     <Form.Label htmlFor="day"><FaCalendarDay/> Pick Your Delivery Day</Form.Label>
-                    <select class="form-control"id="day">
-                        <option>Sunday</option>
-                        <option>Monday</option>
-                        <option>Tuesday</option>
-                        <option>Wednesday</option>
-                        <option>Thursday</option>
-                        <option>Friday</option>
-                        <option>Saturday</option>
-                    </select>
+                    <Form.Control id="day" onChange={this.handleChange} type="text" placeholder="Ex: Sunday" />
                 </Form.Group>
 
                 <Button variant="primary" type="submit">

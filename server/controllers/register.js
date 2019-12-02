@@ -54,6 +54,10 @@ module.exports = function validate_register(input) {
 			errors.zip = "Zip field is required";
 		} 
 
+		if (Validator.isEmpty(input.day)) {
+			errors.day = "Day field is required";
+		} 
+
 		
 		/** if (Validator.isEmpty(input.email)) {
 				errors.email = "Email field is required";
