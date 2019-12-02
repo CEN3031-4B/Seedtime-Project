@@ -15,6 +15,15 @@ import 'bootstrap/dist/css/bootstrap.css'
 
 class App extends React.Component {
   
+constructor(props) {
+    super(props);
+    this.state = {
+            currentId: "",
+            veggies: []
+    }
+}
+
+
   componentDidMount(){
     this.getAllVeggies()
   }
@@ -33,14 +42,6 @@ class App extends React.Component {
     }    
     const veggies = await api.searchVeggies(searchValue);        
     this.setState({veggies: veggies.data.data});
-  }
-  
-  constructor(props) {
-    super(props);
-    this.state = {
-            currentId: "",
-            veggies: []
-    }
   }
 
   updateId(value) {
@@ -98,7 +99,7 @@ class App extends React.Component {
         <div>
           <Header onSearch={this.onSearch}/>
           <Switch>
-            <Route exact path="/produce" component={Produce} />
+            <Route exact path="/produce" render={(routeProps) => ( <Produce {...routeProps} />)} />
             <Route exact path="/cart" render={(routeProps) => ( <Cart {...routeProps} currentId={this.state.currentId} />)} />
             <Route exact path="/register" render={(routeProps) => ( <Register {...routeProps} updateId={this.updateId.bind(this)} handleRegister={this.handleRegister} />)} />
 			<Route exact path="/signin" render={(routeProps) => ( <Login {...routeProps} updateId={this.updateId.bind(this)} handleLogin={this.handleLogin} />)} />
