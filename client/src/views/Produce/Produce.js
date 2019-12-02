@@ -19,7 +19,7 @@ export default({veggies, currentId}) => {
                                 <Card.Text>
                                     <div className="price">${veggie.price}</div>
                                     <br/>
-                                    The Description: {veggie.description}
+                                    Description: {veggie.description}
                                     <br/>
                                     Farm: {veggie.farm}
                                     <br/>
