@@ -37,7 +37,10 @@
     "nodemon": "^1.18.10",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
+    "react": "^16.12.0",
     "react-bootstrap": "^1.0.0-beta.14",
+    "react-scripts": "^3.2.0",
+    "serve": "^11.2.0",
     "should": "^13.2.3",
     "supertest": "^4.0.2",
     "validator": "^12.0.0"
