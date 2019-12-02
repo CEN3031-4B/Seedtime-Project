@@ -30,7 +30,14 @@ class App extends React.Component {
       confirm_pass: confirm_pass
     };
     axios.post('http://localhost:5000/api/auth/register', userData)
-      .then(res => console.log(res.data));
+      .then(res => {
+			  console.log(res);
+			  return res.data._id;
+	  })
+	  .catch(status => {
+			  alert("Registration failed");
+			  return 0;
+	  });
   }
 
   handleLogin = (username, password) => {
@@ -42,7 +49,14 @@ class App extends React.Component {
       password: password,
     };
     axios.post('http://localhost:5000/api/auth/login', userData)
-      .then(res => console.log(res.data));
+      .then(res => {
+			  console.log(res);
+			  return res.data._id;
+	  })
+	  .catch(status => {
+			alert("Login failed");
+			return 0;
+	  });
   }
 
   handleAddProduce = (name, price, farm) => {
