@@ -3,6 +3,9 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
 class Register extends React.Component {
+	constructor(props) {
+			super(props);
+	}
 
     state ={
         username: null,
@@ -16,9 +19,17 @@ class Register extends React.Component {
         })
     }
 
-    handleSubmit = (e) => {
+    handleSubmit = async (e) => {
         e.preventDefault();
-        this.props.handleRegister(this.state.username, this.state.password, this.state.confirm_pass);
+        try {
+				let res = await this.props.handleRegister(this.state.username, this.state.password, this.state.confirm_pass);
+				this.props.updateId(res.data._id);
+				this.props.history.push("/cart");
+		} catch (err) {
+				console.log(err);
+				alert("Registration failed");
+		}
+
     }
 
     render() {

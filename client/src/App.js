@@ -16,8 +16,12 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      
+			currentId: ""
     }
+  }
+
+  updateId(value) {
+		  this.setState({currentId: value});
   }
 
   handleRegister = (username, password, confirm_pass) => {
@@ -29,15 +33,7 @@ class App extends React.Component {
       password: password,
       confirm_pass: confirm_pass
     };
-    axios.post('http://localhost:5000/api/auth/register', userData)
-      .then(res => {
-			  console.log(res);
-			  return res.data._id;
-	  })
-	  .catch(status => {
-			  alert("Registration failed");
-			  return 0;
-	  });
+    return axios.post('http://localhost:5000/api/auth/register', userData)
   }
 
   handleLogin = (username, password) => {
@@ -48,15 +44,7 @@ class App extends React.Component {
       username: username,
       password: password,
     };
-    axios.post('http://localhost:5000/api/auth/login', userData)
-      .then(res => {
-			  console.log(res);
-			  return res.data._id;
-	  })
-	  .catch(status => {
-			alert("Login failed");
-			return 0;
-	  });
+    return axios.post('http://localhost:5000/api/auth/login', userData)
   }
 
   handleAddProduce = (name, price, farm) => {
@@ -78,9 +66,9 @@ class App extends React.Component {
           <Header />
           <Switch>
             <Route exact path="/produce" component={Produce} />
-            <Route exact path="/cart" render={(routeProps) => ( <Cart {...routeProps}/> )} />
-            <Route exact path="/register" render={(routeProps) => ( <Register {...routeProps} handleRegister={this.handleRegister} />)} />
-			<Route exact path="/signin" render={(routeProps) => ( <Login {...routeProps} handleLogin={this.handleLogin} />)} />
+            <Route exact path="/cart" render={(routeProps) => ( <Cart {...routeProps} currentId={this.state.currentId} />)} />
+            <Route exact path="/register" render={(routeProps) => ( <Register {...routeProps} updateId={this.updateId.bind(this)} handleRegister={this.handleRegister} />)} />
+			<Route exact path="/signin" render={(routeProps) => ( <Login {...routeProps} updateId={this.updateId.bind(this)} handleLogin={this.handleLogin} />)} />
             <Route exact path="/add_produce" render={(routeProps) => (<AddProduce {...routeProps} handleAddProduce={this.handleAddProduce} />)}/>
             <Route exact path="/">
               <Redirect to="/produce" />

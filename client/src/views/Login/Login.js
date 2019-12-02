@@ -15,9 +15,16 @@ class Login extends React.Component {
         })
     }
 
-    handleSubmit = (e) => {
+    handleSubmit = async (e) => {
         e.preventDefault();
-        this.props.handleLogin(this.state.username, this.state.password);
+		try {
+				let res = await this.props.handleLogin(this.state.username, this.state.password);
+				this.props.updateId(res.data._id);
+				this.props.history.push("/cart");
+		} catch (err) {
+				console.log(err);
+				alert("Login Failed");
+		}
     }
 
     render() {

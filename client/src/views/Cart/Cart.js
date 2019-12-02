@@ -1,4 +1,5 @@
 import React from 'react'
+import { Redirect, Router  } from 'react-router-dom';
 import './Cart.css'
 import api from '../../api'
 import Card from 'react-bootstrap/Card'
@@ -31,6 +32,11 @@ class Cart extends React.Component {
     componentDidMount = async () => this.getAllCartItems()
 
     render() {
+		if (this.props.currentId === "") {
+				alert("User must log in first");
+				return(<Redirect to="/signin" />);
+		}
+
         const {cartItems} = this.state;
         const Cart = cartItems.map (cartItem => {
             return(
