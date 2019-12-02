@@ -38,14 +38,21 @@ class App extends React.Component {
     this.setState({veggies: veggies.data.data});
   }
   
-  handleRegister = (username, password, confirm_pass) => {
+  handleRegister = (fullname, username, password, confirm_pass, address, address2, city, states, zip, day) => {
     // console.log(username);
     // console.log(password);
     console.log('Username and Password submitted.');
     const userData = {
+      fullname: fullname,
       username: username,
       password: password,
-      confirm_pass: confirm_pass
+      confirm_pass: confirm_pass,
+      address: address,
+      address2: address2,
+      city: city,
+      states: states,
+      zip: zip,
+      day: day
     };
     axios.post('http://localhost:5000/api/auth/register', userData)
       .then(res => console.log(res.data));

@@ -18,8 +18,6 @@ class Produce extends React.Component {
                             <Card id={veggie.id} style={{ width: '18rem' }}>
                                 <Card.Body id="details">
                                     <Card.Title className="title">{veggie.name}</Card.Title>
-                                    <CardImg top width="100%"
-                                    src="https://via.placeholder.com/300.png/09f/fff"></CardImg>
                                     <Card.Text>
                                         <div className="price">${veggie.price}</div>
                                         <br/>
