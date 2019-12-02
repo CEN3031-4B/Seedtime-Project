@@ -111,7 +111,6 @@ class Header extends Component {
                 <a class="navbar-brand" href="#">
                     <img src = "/shopping-cart.svg" id="cartLogo"></img>
                 </a>
-              </li>
             </Link>
             <Link to="/add_produce">
               <li class="nav-item">
