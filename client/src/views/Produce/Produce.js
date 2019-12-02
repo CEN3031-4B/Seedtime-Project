@@ -10,7 +10,7 @@ class Produce extends React.Component {
 
     render() {
         const { veggies} = this.props;        
-        const Produce = veggies.map (veggie => {
+        const Produce = veggies.map(veggie => {
             return (
                 <div class="container-fluid">
                     <Row>

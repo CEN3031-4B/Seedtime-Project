@@ -14,10 +14,6 @@ import 'bootstrap/dist/css/bootstrap.css'
 
 
 class App extends React.Component {
-
-  state = {
-    veggies: []
-  }
   
   componentDidMount(){
     this.getAllVeggies()
@@ -42,7 +38,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-			currentId: ""
+            currentId: "",
+            veggies: []
     }
   }
 
@@ -93,7 +90,8 @@ class App extends React.Component {
         <div>
           <Header onSearch={this.onSearch}/>
           <Switch>
-            <Route exact path="/produce" component={Produce} />
+            <Route exact path="/about" component={About}/>
+            <Route exact path="/produce" render={(routeProps) => <Produce {...routeProps} veggies={this.state.veggies}/>} />
             <Route exact path="/cart" render={(routeProps) => ( <Cart {...routeProps} currentId={this.state.currentId} />)} />
             <Route exact path="/register" render={(routeProps) => ( <Register {...routeProps} updateId={this.updateId.bind(this)} handleRegister={this.handleRegister} />)} />
 			<Route exact path="/signin" render={(routeProps) => ( <Login {...routeProps} updateId={this.updateId.bind(this)} handleLogin={this.handleLogin} />)} />
