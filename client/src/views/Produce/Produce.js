@@ -50,6 +50,7 @@ class Produce extends React.Component {
                                     price: veggie.price,
                                     farm: veggie.farm
                                 }
+                                console.log(item)
                                 api.insertCartItem(item)
                             }}>Add to Cart</Card.Link>
                         </Card.Body>
