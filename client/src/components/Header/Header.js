@@ -74,13 +74,6 @@ class Header extends Component {
                 </a>
               </li>
             </Link>
-            <Link to="/farms">
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  Farms
-                </a>
-              </li>
-            </Link>
             <Link to="/signin">
               <li class="nav-item">
                 <a class="nav-link" href="#">
