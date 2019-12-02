@@ -6,7 +6,8 @@ import Alert from 'react-bootstrap/Alert'
 import api from '../../api'
 import { Row, Col, CardImg } from 'react-bootstrap'
 
-export default({veggies, currentId}) => {      
+export default({veggies, currentId}) => { 
+    console.log(veggies)     
     const Produce = veggies.map (veggie => {
         return (
             <div class="container-fluid">
@@ -26,6 +27,7 @@ export default({veggies, currentId}) => {
                                     <br/>                                
                                 </Card.Text>
                                 <Card.Link href="#" onClick = {() => {
+                                    
                                     const item = {
                                         name: veggie.name,
                                         description: veggie.description,
@@ -33,6 +35,7 @@ export default({veggies, currentId}) => {
                                         price: veggie.price,
                                         farm: veggie.farm
                                     }
+                                    console.log(item)
                                     api.insertCartItem(item)
                                 }} className="price_button">Add to Cart</Card.Link>
                             </Card.Body>
