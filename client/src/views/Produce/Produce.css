@@ -1,21 +1,66 @@
-#produce-header {
-    position: fixed;
-    left: 40%;
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+.col {
+    margin: 0 5px;
 }
 
-/* 
-.id {
+.row{
+    margin: 0 5px;
+    grid-row: 4;
+    margin: 20px;
+}
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+.container-fluid {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 327px;
+    margin: 30px;
+    text-align: center;
+    font-family: arial;
+    background-color: #c3e6cb;
+    border-color: #c3e6cb;
+  }
+  
+  .price {
+    color: grey;
+    font-size: 22px;
+  }
+  
+  .price_button {
+    border: #d4edda;
+    outline: 0;
+    padding: 12px;
+    color: black;
+    background-color: #c3e6cb;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+  }
+  
+  .container-fluid:hover {
+    opacity: 0.7;
+  }
+
+  .container {
     display: flex;
-    justify-content: space-around;
-    align-self: auto; 
-} */
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: flex-start;
+    border: #c3e6cb;
+  }
 
-.bags {
-    flex: auto;
-    justify-content: space-between;
-}
-
-.id {
-    flex: auto;
-    justify-content: space-between;
-}
+  #produce-header {
+      float: center;
+  }
