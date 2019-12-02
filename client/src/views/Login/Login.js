@@ -2,15 +2,11 @@ import React from 'react';
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
-class Register extends React.Component {
-	constructor(props) {
-			super(props);
-	}
+class Login extends React.Component {
 
     state ={
         username: null,
         password: null,
-        confirm_pass: null
     }
 
     handleChange = (e) => {
@@ -21,15 +17,14 @@ class Register extends React.Component {
 
     handleSubmit = async (e) => {
         e.preventDefault();
-        try {
-				let res = await this.props.handleRegister(this.state.username, this.state.password, this.state.confirm_pass);
+		try {
+				let res = await this.props.handleLogin(this.state.username, this.state.password);
 				this.props.updateId(res.data._id);
 				this.props.history.push("/cart");
 		} catch (err) {
 				console.log(err);
-				alert("Registration failed");
+				alert("Login Failed");
 		}
-
     }
 
     render() {
@@ -46,11 +41,6 @@ class Register extends React.Component {
                     <Form.Control id="password" onChange={this.handleChange} type="password" placeholder="Password" />
                 </Form.Group>
 
-                <Form.Group controlId="formBasicPassword">
-                    <Form.Label htmlFor="confirm_pass">Confirm Password</Form.Label>
-                    <Form.Control id="confirm_pass" onChange={this.handleChange} type="password" placeholder="Confirm Password" />
-                </Form.Group>
-
                 <Button variant="primary" type="submit">
                     Submit
                 </Button>
@@ -61,4 +51,4 @@ class Register extends React.Component {
 
 }
 
-export default Register;
+export default Login;
