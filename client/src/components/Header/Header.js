@@ -58,7 +58,7 @@ class Header extends Component {
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        {/* <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <Link to="/produce">
               <li class="nav-item active">
@@ -70,7 +70,7 @@ class Header extends Component {
             
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-            </button>
+            </button> */}
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
@@ -102,24 +102,24 @@ class Header extends Component {
 
 
                 </ul>
-                <form class="form-inline my-2 my-lg-0">
+                {/* <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></input>
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="navSearch">Search</button>
-                </form>
+                </form> */}
             </div>
-            <Link to="/cart">
+            {/* <Link to="/cart">
                 <a class="navbar-brand" href="#">
                     <img src = "/shopping-cart.svg" id="cartLogo"></img>
                 </a>
-            </Link>
-            <Link to="/add_produce">
+            </Link> */}
+            {/* <Link to="/add_produce">
               <li class="nav-item">
                 <a class="nav-link" href="#">
                   Add Produce
                 </a>
               </li>
-            </Link>
-          </ul>
+            </Link> */}
+          
           <form class="form-inline my-2 my-lg-0">
             <input
               onChange={this.onChange}
@@ -137,7 +137,7 @@ class Header extends Component {
               Search
             </button>
           </form>
-        </div>
+        
         <Link to="/cart">
           <a class="navbar-brand" href="#">
             <img src="/shopping-cart.svg" id="cartLogo"></img>
