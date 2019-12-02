@@ -8,6 +8,9 @@ import { TiLockClosedOutline, TiLockClosed, TiLocationOutline, TiLocation } from
 
 
 class Register extends React.Component {
+	constructor(props) {
+			super(props);
+	}
 
     state ={
         fullname: null,
@@ -28,10 +31,18 @@ class Register extends React.Component {
         })
     }
 
-    handleSubmit = (e) => {
+    handleSubmit = async (e) => {
         e.preventDefault();
-        this.props.handleRegister(this.state.fullname, this.state.username, this.state.password, this.state.confirm_pass, 
+        try {
+				let res = await this.props.handleRegister(this.state.fullname, this.state.username, this.state.password, this.state.confirm_pass, 
             this.state.address, this.state.address2, this.state.city, this.state.states, this.state.zip, this.state.day);
+				this.props.updateId(res.data._id);
+				this.props.history.push("/cart");
+		} catch (err) {
+				console.log(err);
+				alert("Registration failed");
+		}
+
     }
 
     render() {
