@@ -9,7 +9,7 @@ import { Row, Col, CardImg } from 'react-bootstrap'
 class Produce extends React.Component {
 
     render() {
-        const { veggies} = this.props;        
+        const { veggies } = this.props.veggies;        
         const Produce = veggies.map (veggie => {
             return (
                 <div class="container-fluid">
