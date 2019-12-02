@@ -14,10 +14,6 @@ import 'bootstrap/dist/css/bootstrap.css'
 
 
 class App extends React.Component {
-
-  state = {
-    veggies: []
-  }
   
   componentDidMount(){
     this.getAllVeggies()
@@ -42,7 +38,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-			currentId: ""
+            currentId: "",
+            veggies: []
     }
   }
 
