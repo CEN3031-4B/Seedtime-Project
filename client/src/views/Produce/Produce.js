@@ -31,7 +31,6 @@ export default({props, veggies, currentId}) => {
 
 									if (currentId === "") {
 											alert("Must login first");
-											props.history("/signin");
 									} else {
 											const item = {
 												name: veggie.name,
