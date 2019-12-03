@@ -37,6 +37,8 @@ class Cards extends Component {
                             <ListGroup.Item> Name: {veggie.name}</ListGroup.Item>
                             <ListGroup.Item> Farm: {veggie.farm}</ListGroup.Item>
                             <ListGroup.Item> Price: {veggie.price}</ListGroup.Item>
+                            <ListGroup.Item> Description: {veggie.description}</ListGroup.Item>
+                            <ListGroup.Item> Season: {veggie.season}</ListGroup.Item>
                         </ListGroup>
                     </Card>
                     <br/>
