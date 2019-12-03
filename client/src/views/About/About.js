@@ -1,16 +1,24 @@
 import React from 'react';
 import './About.css'
 import Card from 'react-bootstrap/Card'
+import { CardImg } from 'react-bootstrap'
 
 class About extends React.Component {
         render() {
             return (
-                <div>
-                    <Card id="aboutBox" style={{ width: '68.5em' }}>
+                <div className="about">
+                    <Card id="aboutBox" style={{ width: '68.5rem' }}>
                     <Card.Body>
                         <Card.Title> <font size="6"> <b><center>About Us</center></b></font></Card.Title>
                         <br></br>
+
+                        <CardImg top width="100%"
+                            src="https://www.bestfoodfacts.org/wp-content/uploads/2018/07/best-food-facts-gardening-article-image-1-824x325.jpg">
+                        </CardImg>
+
                         <br></br>
+                        <br></br>
+
                         <Card.Text>
                            Seed Time Harvest Farms has been serving the North Florida area with fresh food delivery services, 
                         gathering produce from local farmers and vendors since May 2012.
