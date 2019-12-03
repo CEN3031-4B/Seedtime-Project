@@ -69,7 +69,9 @@ class Cart extends React.Component {
                 <CardImg top width="100%"
                     src="https://www.barillacfn.com/m/articles/1600x280/header-big.jpg">
                 </CardImg>
-                <Alert id="cart-header" variant="success">Cart:</Alert>
+                <Alert id="cart-header" variant="success">
+                    <Alert.Heading>Cart:</Alert.Heading>
+                </Alert>
                 <div className="container">
                     {Cart}
                 </div>
