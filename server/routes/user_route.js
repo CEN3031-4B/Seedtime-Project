@@ -21,8 +21,19 @@ router.post("/register", (req, res) => {
 						const thisUser = new User({
 								username: req.body.username,
 								//email: req.body.email,
-								password: req.body.password
+								password: req.body.password,
+								fullname: req.body.fullname,
+								address: req.body.address,
+								address2: "",
+								city: req.body.city,
+								states: req.body.states,
+								zip: req.body.zip,
+								day: req.body.day
 						});
+
+						if (req.body.address2) {
+								thisUser.address2 = req.body.address2
+						}
 						
 						bcrypt.genSalt(10, (err, salt) => {
 								bcrypt.hash(thisUser.password, salt, (err, hash) => {
