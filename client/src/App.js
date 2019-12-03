@@ -18,12 +18,8 @@ class App extends React.Component {
 constructor(props) {
     super(props);
     this.state = {
-<<<<<<< HEAD
-        veggies: []
-=======
             currentId: "",
             veggies: []
->>>>>>> merging_branch
     }
 }
 
@@ -103,18 +99,13 @@ constructor(props) {
         <div>
           <Header onSearch={this.onSearch}/>
           <Switch>
-<<<<<<< HEAD
-            <Route exact path="/produce" render={(routeProps) => ( <Produce {...routeProps} />)} />
-            <Route exact path="/cart" render={(routeProps) => ( <Cart {...routeProps}/> )} />
-            <Route exact path="/register" render={(routeProps) => ( <Register {...routeProps} handleRegister={this.handleRegister} />)} />
-=======
             <Route exact path="/produce" render={(routeProps) => ( <Produce {...routeProps} 
                 currentId={this.state.currentId}
                 veggies = {this.state.veggies}/>)} />
+            <Route exact path="/about" component={About} />
             <Route exact path="/cart" render={(routeProps) => ( <Cart {...routeProps} currentId={this.state.currentId} />)} />
             <Route exact path="/register" render={(routeProps) => ( <Register {...routeProps} updateId={this.updateId.bind(this)} handleRegister={this.handleRegister} />)} />
 			<Route exact path="/signin" render={(routeProps) => ( <Login {...routeProps} updateId={this.updateId.bind(this)} handleLogin={this.handleLogin} />)} />
->>>>>>> merging_branch
             <Route exact path="/add_produce" render={(routeProps) => (<AddProduce {...routeProps} handleAddProduce={this.handleAddProduce} />)}/>
             <Route exact path="/">
               <Redirect to="/produce" />
