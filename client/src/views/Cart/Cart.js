@@ -75,7 +75,13 @@ class Cart extends React.Component {
                 <div className="container">
                     {Cart}
                 </div>
-                <Button variant="primary" size="lg" block>Checkout</Button>
+                <Button variant="primary" size="lg" block onClick = {() => {
+                        cartItems.map(cartItem => {
+                            api.deleteCartItemById(cartItem._id)
+                            .then(() => {
+                                this.getAllCartItems()}
+                            )})
+                    }}>Checkout</Button>
             </div>
         )
     }
