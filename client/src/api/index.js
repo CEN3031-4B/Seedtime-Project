@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'http://seed-times.herokuapp.com/api',
+    baseURL: 'http://seed-times.herokuapp.com:5000/api',
 });
 
 export const insertVeggie = payload => api.post(`/veggie`, payload);
