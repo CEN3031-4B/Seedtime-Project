@@ -39,10 +39,14 @@
     "passport-jwt": "^4.0.0",
     "react": "^16.12.0",
     "react-bootstrap": "^1.0.0-beta.14",
+<<<<<<< HEAD
     "react-dom": "^16.12.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "^3.2.0",
     "serve": "^11.2.0",
+=======
+    "react-icons": "^3.8.0",
+>>>>>>> 921077b81ce8affdd6dd73ecae0628e9d32bb5db
     "should": "^13.2.3",
     "supertest": "^4.0.2",
     "validator": "^12.0.0"

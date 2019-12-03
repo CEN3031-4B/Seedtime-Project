@@ -6,6 +6,8 @@ const Veggie = new Schema(
         name: {type: String, required: true},
         price: {type: Number, required: true},
         farm: {type: String, required: true},
+        description: {type: String, required: true},
+        season: {type: String, required: true},
     }
 )
 

@@ -57,8 +57,28 @@ getVeggies = async (req, res) => {
     }).catch(err => console.log(err))
 }
 
+searchVeggies = async (req, res) => {
+    await Veggie.find({
+        $or: [
+            {name: {$regex: req.params.search}},
+            {farm: {$regex: req.params.search}}
+        ]
+    }, (err, veggies) => {
+        if (err) {
+            return res.status(400).json({ success: false, error: err })
+        }
+        if (!veggies) {
+            return res
+                .status(404)
+                .json({ success: false, error: `Veggie not found` })
+        }
+        return res.status(200).json({ success: true, data: veggies })
+    }).catch(err => console.log(err))
+}
+
 module.exports = {
     createVeggie,
     deleteVeggie,
     getVeggies,
+    searchVeggies
 }
