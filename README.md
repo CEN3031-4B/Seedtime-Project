@@ -1,7 +1,6 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-This project contains an example project board meant to showcase how one can be used. The issues posted to it are not real issues.
+This is the overall repo for the CEN3031 Group 4B project. Seed Time Harvest Farms was our client, who "has been serving the North Florida area with fresh food delivery services, gathering produce from local farmers and vendors since May 2012. We offer great customer services bringing fresh food to your table and creative ways to use produce in new ways."
 
-#### _**IMPORTANT NOTE**_ - 
+#### _**Repo Info**_ - 
 This project does not have a mongoDB connection setup. For:
 - local development: create a config file (make sure to name it config.js) in the config folder, which exports your db.uri connection. An example is provided, config/config.example.js. This file will be ignored by git so your db credentials will be kept safe when the app is deployed.
 - production: Since the config file is not pushed when you deploy your app, you must specifiy your db uri in heorku. Set the uri in heroku as specified in [this](https://devcenter.heroku.com/articles/config-vars) resource. Make sure you name the environement variable "DB_URI".
