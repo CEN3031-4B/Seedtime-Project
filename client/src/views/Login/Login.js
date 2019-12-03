@@ -1,6 +1,7 @@
 import React from 'react';
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+import './Login.css'
 
 class Login extends React.Component {
 
@@ -29,7 +30,8 @@ class Login extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="login">
+            <legend><span class="title"></span>Sign In</legend>
             <form onSubmit={this.handleSubmit}>
                 <Form.Group controlId="formBasicEmail">
                     <Form.Label htmlFor="username">Username</Form.Label>
@@ -42,7 +44,7 @@ class Login extends React.Component {
                 </Form.Group>
 
                 <Button variant="primary" type="submit">
-                    Submit
+                    Login
                 </Button>
             </form>
             </div>

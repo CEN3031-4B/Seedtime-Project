@@ -28,15 +28,18 @@ constructor(props) {
     this.getAllVeggies()
   }
 
+
   getAllVeggies = () => {
     api.getAllVeggies().then(veggies => {
       this.setState({
           veggies: veggies.data.data
       })
-    })
+    });
+    console.log("ttt");
   }
 
   onSearch = async searchValue => {
+    console.log("zzz");
     if (!searchValue){
       return this.getAllVeggies();      
     }    
@@ -79,8 +82,7 @@ constructor(props) {
     return axios.post('/api/auth/login', userData)
   }
 
-  handleAddProduce = (name, price, farm, description, season) => {
-    console.log('Item name, price, and farm submitted.');
+  handleAddProduce = async (name, price, farm, description, season) => {    
     const itemData = {
       name: name,
       price: price,
@@ -106,7 +108,8 @@ constructor(props) {
             <Route exact path="/cart" render={(routeProps) => ( <Cart {...routeProps} currentId={this.state.currentId} />)} />
             <Route exact path="/register" render={(routeProps) => ( <Register {...routeProps} updateId={this.updateId.bind(this)} handleRegister={this.handleRegister} />)} />
 			<Route exact path="/signin" render={(routeProps) => ( <Login {...routeProps} updateId={this.updateId.bind(this)} handleLogin={this.handleLogin} />)} />
-            <Route exact path="/add_produce" render={(routeProps) => (<AddProduce {...routeProps} handleAddProduce={this.handleAddProduce} />)}/>
+    <Route exact path="/add_produce" render={(routeProps) => (<AddProduce {...routeProps} handleAddProduce={this.handleAddProduce}/>)}
+                />
             <Route exact path="/">
               <Redirect to="/produce" />
             </Route>
