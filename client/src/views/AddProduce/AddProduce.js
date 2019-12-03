@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import './AddProduce.css'
@@ -7,7 +7,7 @@ import { GiFarmTractor } from 'react-icons/gi'
 import { TiWeatherSunny, TiDocumentText } from 'react-icons/ti'
 
 
-class AddProduce extends React.Component {
+class AddProduce extends Component {
 
     state = {
         name: null,
