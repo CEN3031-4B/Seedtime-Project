@@ -2,7 +2,8 @@ import React from 'react'
 import { Redirect, Router  } from 'react-router-dom';
 import './Cart.css'
 import api from '../../api'
-import Card from 'react-bootstrap/Card'
+import {Card, CardImg, Button} from 'react-bootstrap'
+import Alert from 'react-bootstrap/Alert'
 import Axios from 'axios'
 
 /*
@@ -40,7 +41,7 @@ class Cart extends React.Component {
         const {cartItems} = this.state;
         const Cart = cartItems.map (cartItem => {
             return(
-                <div className="cart">
+                <div className="cartItems">
                     <Card id={cartItem.id} style={{ width: '18rem' }}>
                         <Card.Body>
                             <Card.Title>{cartItem.name}</Card.Title>
@@ -64,10 +65,15 @@ class Cart extends React.Component {
             );
         });
         return (
-            <div class="container">
-                <h1 class="text-center">This is the cart page!</h1>
-                {Cart}
-                <button class="btn-success">Checkout</button>
+            <div>
+                <CardImg top width="100%"
+                    src="https://www.barillacfn.com/m/articles/1600x280/header-big.jpg">
+                </CardImg>
+                <Alert id="cart-header" variant="success">Cart:</Alert>
+                <div className="container">
+                    {Cart}
+                </div>
+                <Button variant="primary" size="lg" block>Checkout</Button>
             </div>
         )
     }
