@@ -102,6 +102,7 @@ constructor(props) {
             <Route exact path="/produce" render={(routeProps) => ( <Produce {...routeProps} 
                 currentId={this.state.currentId}
                 veggies = {this.state.veggies}/>)} />
+            <Route exact path="/about" component={About} />
             <Route exact path="/cart" render={(routeProps) => ( <Cart {...routeProps} currentId={this.state.currentId} />)} />
             <Route exact path="/register" render={(routeProps) => ( <Register {...routeProps} updateId={this.updateId.bind(this)} handleRegister={this.handleRegister} />)} />
 			<Route exact path="/signin" render={(routeProps) => ( <Login {...routeProps} updateId={this.updateId.bind(this)} handleLogin={this.handleLogin} />)} />
