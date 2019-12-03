@@ -65,7 +65,7 @@ constructor(props) {
       zip: zip,
       day: day
     };
-    return axios.post('http://localhost:5000/api/auth/register', userData)
+    return axios.post('http://seed-times.herokuapp.com/api/auth/register', userData)
   }
 
   handleLogin = (username, password) => {
@@ -76,12 +76,8 @@ constructor(props) {
       username: username,
       password: password,
     };
-<<<<<<< HEAD
     axios.post('http://seed-times.herokuapp.com/api/auth/register', userData)
       .then(res => console.log(res.data));
-=======
-    return axios.post('http://localhost:5000/api/auth/login', userData)
->>>>>>> 921077b81ce8affdd6dd73ecae0628e9d32bb5db
   }
 
   handleAddProduce = (name, price, farm, description, season) => {
@@ -93,15 +89,9 @@ constructor(props) {
       description: description,
       season: season
     };
-<<<<<<< HEAD
     axios.post('http://seed-times.herokuapp.com/api/veggie', itemData)
       .then(res => console.log(res.data))
   }
-=======
-    axios.post('http://localhost:5000/api/veggie', itemData)
-      .then(res => console.log(res.data));
-  };
->>>>>>> 921077b81ce8affdd6dd73ecae0628e9d32bb5db
 
   render(){
 
