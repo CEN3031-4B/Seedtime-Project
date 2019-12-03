@@ -28,7 +28,7 @@ class App extends React.Component {
       password: password,
       confirm_pass: confirm_pass
     };
-    axios.post('http://localhost:5000/api/auth/register', userData)
+    axios.post('http://seed-times.herokuapp.com/api/auth/register', userData)
       .then(res => console.log(res.data));
   }
 
@@ -39,7 +39,7 @@ class App extends React.Component {
       price: price,
       farm: farm
     };
-    axios.post('http://localhost:5000/api/veggie', itemData)
+    axios.post('http://seed-times.herokuapp.com/api/veggie', itemData)
       .then(res => console.log(res.data))
   }
 
