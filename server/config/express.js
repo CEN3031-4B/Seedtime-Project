@@ -34,7 +34,7 @@ module.exports.init = () => {
     //add a router
 	app.use("/api/auth", usersRoute);
 
-    app.use('/', VeggieRouter);
+    app.use('/api', VeggieRouter);
     app.use('/api', CartRouter);
 
 	/**
