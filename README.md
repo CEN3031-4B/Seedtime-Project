@@ -3,7 +3,7 @@ This is the overall repo for the CEN3031 Group 4B project. Seed Time Harvest Far
 ## Link to deployed site https://seed-times.herokuapp.com/produce
 
 ## Features Implemented:
-![Alt text] (arvindshankar/Desktop/add_produce.png?raw=true)
+![Alt text](arvindshankar/Desktop/add_produce.png?raw=true)
 
 ## Run this repo locally:
 
