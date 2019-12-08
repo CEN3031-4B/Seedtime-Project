@@ -3,8 +3,28 @@ This is the overall repo for the CEN3031 Group 4B project. Seed Time Harvest Far
 ## Link to deployed site https://seed-times.herokuapp.com/produce
 
 ## Features Implemented:
+- Landing page which displays currently-added produce from database
+![Produce](produce.png?raw=true "Produce")
+
+- About us page showing information about the client
+![About](about.png?raw=true "About")
+
+- Sign-In/Registration pages for users - this includes user authentication
+![SignIn](signin.png?raw=true "SignIn")
+
+- Add Produce page for users to add produce items to the database
 ![Add Produce](add_produce.png?raw=true "Add Produce")
 
+- Add to cart feature - can click on the “add to cart” button and the associated item will be added to the cart
+![Cart](cart.png?raw=true "Cart")
+
+- Cart page with ability to “checkout”
+![Checkout](checkout.png?raw=true "Checkout")
+
+- Search feature to search for produce by item or farm name
+![Search](search.png?raw=true "Search")
+
+- Navbar with navigation links
 ## Run this repo locally:
 
 In the project directory, you can run:
