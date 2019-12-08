@@ -1,7 +1,9 @@
 This is the overall repo for the CEN3031 Group 4B project. Seed Time Harvest Farms was our client, who "has been serving the North Florida area with fresh food delivery services, gathering produce from local farmers and vendors since May 2012. We offer great customer services bringing fresh food to your table and creative ways to use produce in new ways."
 
-[## Link to deployed site] (https://seed-times.herokuapp.com/produce)
+## Link to deployed site https://seed-times.herokuapp.com/produce
 
+## Features Implemented:
+![Alt text] (/Desktop/add_produce.png?raw=true)
 
 ## Run this repo locally:
 
