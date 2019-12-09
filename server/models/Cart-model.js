@@ -1,3 +1,4 @@
+//A database schema for the Cart items
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 

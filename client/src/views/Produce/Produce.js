@@ -1,3 +1,7 @@
+//This file generates the content displayed on the Produce page. It gets passed in a list of inventory items to display
+//from App.js. The inventory cards are given their Add to Cart functionality here by binding the API function to a link
+//on each inventory item Card
+
 import React from 'react';
 import './Produce.css'
 import Card from 'react-bootstrap/Card'

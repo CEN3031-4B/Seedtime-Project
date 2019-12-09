@@ -8,6 +8,8 @@ class Header extends Component {
     search: ""
   };
 
+  //This function listens for any changes in input to the search bar and calls binded function in 
+  //App.js to search the database
   onChange = e => {
     const search = e.target.value;    
     this.setState({ search });

@@ -1,3 +1,4 @@
+//A database schema for the inventory items
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 

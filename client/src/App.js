@@ -28,7 +28,7 @@ constructor(props) {
     this.getAllVeggies()
   }
 
-
+  //This function uses the API to set the state of the page to have all the items in the inventory
   getAllVeggies = () => {
     api.getAllVeggies().then(veggies => {
       this.setState({
@@ -38,6 +38,8 @@ constructor(props) {
     console.log("ttt");
   }
 
+  //This takes the input from the search bar and updates the state's inventory list to reflect the results of the API
+  //search results
   onSearch = async searchValue => {
     console.log("zzz");
     if (!searchValue){
@@ -53,8 +55,6 @@ constructor(props) {
 
   handleRegister = (fullname, username, password, confirm_pass, address, address2, city, states, zip, day) => {
 
-    // console.log(username);
-    // console.log(password);
     console.log('Username and Password submitted.');
     const userData = {
       fullname: fullname,
@@ -72,8 +72,6 @@ constructor(props) {
   }
 
   handleLogin = (username, password) => {
-    // console.log(username);
-    // console.log(password);
     console.log('Username and Password submitted.');
     const userData = {
       username: username,

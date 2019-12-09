@@ -1,3 +1,5 @@
+//This is the Axios API file for all the corresponding Express routes related to the inventory and cart.
+//These functions allow for much cleaner and simpler us of the backend queries and routes.
 import axios from 'axios';
 
 const api = axios.create({

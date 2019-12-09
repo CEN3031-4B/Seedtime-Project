@@ -1,6 +1,9 @@
+// This file contains Mongoose queries that control the cart related functionality.
+
 const Cart = require('../models/Cart-model')
 const mongoose = require('mongoose')
 
+// This adds an item to the cart and returns a status denoting if the function executed properly.
 createCartItem = (req, res) => {
     const body = req.body
 
@@ -34,6 +37,7 @@ createCartItem = (req, res) => {
         })
 }
 
+// This deletes an item from the cart and returns a status denoting if the function executed properly.
 deleteCartItem  = async (req, res) => {
     await Cart.findOneAndDelete({ _id: req.params.id }, (err) => {        
         if (err) {
@@ -45,7 +49,7 @@ deleteCartItem  = async (req, res) => {
         return res.status(200).json({ success: true})
     }).catch(err => console.log(err))
 }
-
+// This get a list of all the items in the cart and returns a status denoting if the function executed properly.
 getCartItems = async (req, res) => {
     await Cart.find({}, (err, cartItems) => {
         if (err) {

@@ -1,3 +1,4 @@
+//Express routing for all of the Mongoose functions related to the inventory.
 const VeggieController = require('../controllers/veggie-controller'),
     express = require('express'), 
     router = express.Router()
