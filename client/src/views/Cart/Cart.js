@@ -44,30 +44,6 @@ class Cart extends React.Component {
         }
     }
 
-    Example = () => {
-        const handleClose = () => this.setState({show : false})
-        const handleShow = () => this.setState({show : true})
-      
-        return (
-          <>
-            <Modal show={this.state.show} onHide={handleClose()}>
-              <Modal.Header closeButton>
-                <Modal.Title>Modal heading</Modal.Title>
-              </Modal.Header>
-              <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-              <Modal.Footer>
-                <Button variant="secondary" onClick={handleClose()}>
-                  Close
-                </Button>
-                <Button variant="primary" onClick={handleClose()}>
-                  Save Changes
-                </Button>
-              </Modal.Footer>
-            </Modal>
-          </>
-        );
-      }
-
     componentDidMount = async () => this.getAllCartItems()
 
     render() {
@@ -116,8 +92,8 @@ class Cart extends React.Component {
                 </div>
                 {this.renderRedirect()}
                 <Button variant="primary" size="lg" block onClick = {() => {
-                    // modal showing successful payment
-                    // this.Example()
+                    // alert showing successful payment
+                    
                     alert('Congratulations, your order has been placed!')
 
 
@@ -130,18 +106,6 @@ class Cart extends React.Component {
 
                     this.setRedirect()
                     }}>Checkout</Button>
-
-                    {/* <Modal show={this.state.show} onHide={this.handleClose()}>
-                        <Modal.Header closeButton>
-                            <Modal.Title>Congratulations!</Modal.Title>
-                        </Modal.Header>
-                        <Modal.Body>Your order has been placed!</Modal.Body>
-                        <Modal.Footer>
-                            <Button variant="secondary" onClick={this.handleClose()}>
-                            Continue shopping
-                            </Button>
-                        </Modal.Footer>
-                    </Modal> */}
             </div>
         )
     }
