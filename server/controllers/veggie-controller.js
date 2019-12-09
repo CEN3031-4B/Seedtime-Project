@@ -1,5 +1,7 @@
+// This file contains Mongoose queries that control the inventory related functionality.
 const Veggie = require('../models/veggie-model')
 
+// This creates an item and adds it to inventory and returns a status denoting if the function executed properly.
 createVeggie = (req, res) => {
     const body = req.body
 
@@ -33,6 +35,7 @@ createVeggie = (req, res) => {
         })
 }
 
+// This deletes an item from inventory and returns a status denoting if the function executed properly.
 deleteVeggie = async (req, res) => {
     await Veggie.findOneAndDelete({ _id: req.params.id }, (err) => {
         if (err) {
@@ -43,6 +46,7 @@ deleteVeggie = async (req, res) => {
     }).catch(err => console.log(err))
 }
 
+// This returns a list of all items in inventory and returns a status denoting if the function executed properly.
 getVeggies = async (req, res) => {
     await Veggie.find({}, (err, veggies) => {
         if (err) {
@@ -57,6 +61,8 @@ getVeggies = async (req, res) => {
     }).catch(err => console.log(err))
 }
 
+// This searchs the inventory and returns a list of items that match the searched attributes and returns status denoting 
+//if the function executed properly.
 searchVeggies = async (req, res) => {
     await Veggie.find({
         $or: [

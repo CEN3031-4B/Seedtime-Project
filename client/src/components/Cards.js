@@ -1,3 +1,4 @@
+//This component creates the cards that are displayed on the homepage. It uses the API to get a 
 import React, { Component } from 'react'
 import Card from 'react-bootstrap/Card'
 import ListGroup from 'react-bootstrap/ListGroup'
@@ -14,10 +15,8 @@ class Cards extends Component {
 
     componentDidMount = async () => {
         this.setState({ isLoading: true })
-        console.log("yy")
         
         await api.getAllVeggies().then(veggies => {
-            console.log("xxx")
             this.setState({
                 veggies: veggies.data.data,
                 isLoading: false,
@@ -28,7 +27,6 @@ class Cards extends Component {
     render() {
         const { veggies, isLoading } = this.state
 
-        // const Loading = <p>Loading...</p>
         const Cards = veggies.map (veggie => {
             return (
                 <div className="card Wrapper">
